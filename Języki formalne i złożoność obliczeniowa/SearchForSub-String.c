@@ -17,11 +17,16 @@ printf(Reset);
 
 	char str[500];
 	char subStr[500];
-	
-	printf("Enter your string: ");
+	printf(Green);
+	printf("\nEnter your string:  ");
+	printf(Reset);
 	fgets(str,sizeof(str),stdin);
-	printf("Enter your sub-string: ");
+	printf(Green);
+	printf("\nEnter your sub-string:  ");
+	printf(Reset);
 	scanf("%s",subStr);
+	printf("\n");
+	
 	
 	int subStrStartIndexArr[100]; // tablica w której bêd¹ umieszczane indexy na których zaczyna siê ka¿dy podci¹g.
 	
@@ -70,6 +75,10 @@ printf(Reset);
 		printf(Reset); 
 		printf("\n---------------------------------\n");
 		return 0;
+	}else{
+	    printf(Green);
+	    printf("Sub-strings in text:\n");
+	    printf(Reset);
 	}
 	
 	i = 0;
@@ -84,9 +93,9 @@ printf(Reset);
 		if(pivot == 1){ 
 		    if(pivot2 == subStrLength){   //bêdziemy wyœwietlaæ tak d³ugo podci¹g na zielono - dopóki pivot2 nie osiegnie liczby d³ugoœci podciagu. 
 			    pivot = 0; 
-			    printf(Green);
+			    //printf(Green);
 				printf("%c",str[i]);
-				printf(Reset);
+				//printf(Reset);
 				pivot2=1;
 		    }
 			else{
@@ -117,6 +126,7 @@ printf(Reset);
 			printf("%c",str[i]);
 		}
 	}	
+	printf("\n"); 
 	return 0;
 }
 
