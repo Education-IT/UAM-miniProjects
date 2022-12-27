@@ -1,0 +1,50 @@
+
+
+char *polecenie[150];
+
+void change()
+{
+
+	if((strcmp(polecenie[0],"hotwater")==0)&&(strcmp(polecenie[1],"temp")==0)&&(polecenie[2]==NULL)){ 
+      		Serial.println("");
+      		Serial.println(celsius);
+	{
+	else if((strcmp(polecenie[0],"hotwater")==0)&&(strcmp(polecenie[1],"start")==0)&&(strcmp(polecenie[2],"temp")==0)&&(polecenie[3] == (int)polecenie[3])&&(polecenie[4]==NULL)){ 
+      char a = (polecenie[3][0]);
+      char b = (polecenie[3][1]);
+      int ia = a - '0';
+      int ib = b - '0';
+      int number = ia * 10 + ib;
+      if(number<tempStop){
+      tempStart = number;
+      Serial.println("\nTemperatura zmieniona\n");
+}
+
+void parser(char *buffer){
+
+char *pojedyncze_slowo = strtok(buffer," \n\t"); 
+	int indeks=0; 
+	while(1){ 
+		if(pojedyncze_slowo==NULL){
+			break;
+		}
+		else{
+			polecenie[indeks]=pojedyncze_slowo; 
+			indeks=indeks+1; 
+			pojedyncze_slowo=strtok(NULL," \n\t"); 
+			polecenie[indeks]=NULL; 
+		}
+	}
+}
+
+
+void loop() {
+
+String str = Serial.readString();
+   if (str != ""){
+   char buffer [str.length() + 1];
+   str.toCharArray(buffer, buffer);
+   parser(buffer);
+   change();//funkcja w której są ify}
+
+}
