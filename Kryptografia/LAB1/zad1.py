@@ -71,6 +71,6 @@ print(f"Is the result an inverse number? {result[0] == b}\n")
 print("#-- Example 4 --#")
 a = 9
 n = 64
-b = 10321
+b = 57
 result = zad1(a,n)
-print(f"Is the result an inverse number? {result[0] == 57 }\n")
+print(f"Is the result an inverse number? {result[0] == b }\n")
