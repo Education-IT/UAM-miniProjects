@@ -8,19 +8,19 @@ b = 6799592227003277093566321413529235681287323976438594990863196254916999985637
 # "Wprowadzanie do Kryptografii Johannes A. Buchmann PWN Warszawa 2006 str. 13"
 
 def xeuclid(a,n):
-    xs = [1,0] #ustalamy wartości początkowe współczynników
+    xs = [1,0]
     ys = [0,1]
 
-    while n!=0: # dopóki iloraz (dzielnik !=0)
-        r = a % n #reszta dzielenia modulo z a%n
-        q = a // n #liczba całkowita dzielenień   q * n + r
-        a = n  # przesunięcie zmiennych aby wykorzystać je w następnej iteracji
-        n = r # przesunięcie zmiennych aby wykorzystać je w następnej iteracji
-        xx = xs[1] #W każdej iteracji aktualizujemy wartości w xs i ys, aby znaleźć nowe przybliżenia x i y
+    while n!=0:
+        r = a % n
+        q = a // n
+        a = n
+        n = r
+        xx = xs[1]
         yy = ys[1]
-        xs[1] = xs[0] - q*xs[1] # od wyniku równania ( 1 ) odejmujemy równanie ( 2 ) wymnożone przez q
+        xs[1] = xs[0] - q*xs[1]
         ys[1] = ys[0] - q*ys[1]
-        xs[0] = xx #Przypisujemy poprzednie wartości aby pracować na nich w następnej iteracji
+        xs[0] = xx
         ys[0] = yy
         # print("-----")
         # print(f"xs[1] = {xs[0]} - {q}*{xs[1]}")
@@ -33,11 +33,11 @@ def xeuclid(a,n):
 
 def zad1(a, n):
     nwd, result_X, result_Y = xeuclid(a, n)
-    if nwd != 1: # jeśli nwd != 1 to znaczy że liczby nie są względnie pierwsze czyli nie można znaleźć liczby odwrotnej
+    if nwd != 1:
         print(f'The inverse number doesn\'t exist because a and n are not relatively prime!')
         return
     else:
-        return (result_X % n,result_X,result_Y) #zgodnie z wzorem x % n = liczba odwrotna
+        return (result_X % n,result_X,result_Y)
 
 result = zad1(a,n)
 print("\n#-- Example 1 --#")
