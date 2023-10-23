@@ -74,5 +74,3 @@ n = 64
 b = 10321
 result = zad1(a,n)
 print(f"Is the result an inverse number? {result[0] == 57 }\n")
-
-print(-7%64)
