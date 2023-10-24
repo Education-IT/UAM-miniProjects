@@ -2,6 +2,10 @@ import random
 from zad1 import xeuclid
 from zad2 import ex2_op
 
+# aby zrozumieć działanie algorytmu:
+# https://www.youtube.com/watch?v=NOj-jNQfrd4&ab_channel=KhanAcademyPoPolsku
+# http://www.algorytm.org/algorytmy-arytmetyczne/test-pierwszosci-test-fermata.html
+
 # n - liczba której sprawdzamy pierwszość
 # k - liczba powtórzeń testu (w celu zminimalizowanania ryzyka wylosowanie a "oszusta"
 def test_Fermata(n, k):
